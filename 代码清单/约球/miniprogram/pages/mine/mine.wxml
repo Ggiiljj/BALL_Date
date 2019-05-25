@@ -1,0 +1,13 @@
+<!--pages/mine/mine.wxml-->
+<view class="bg">
+<view class="header">
+<open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
+<open-data type="userNickName" lang="zh_CN" class="namer" ></open-data>
+</view>
+</view>
+<van-cell-group>
+<van-cell title="修改" is-link url="/pages/change/change" link-type="navigateTo" size="large"/>
+<van-cell title="我的基本信息" link-type="navigateTo"size="large" />
+<van-cell title="他人评价" link-type="navigateTo"size="large" />
+<van-cell title="标签" link-type="navigateTo"size="large" />
+</van-cell-group>

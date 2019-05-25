@@ -1,0 +1,30 @@
+<text class="textt">填写详情</text>
+<view class="section">
+  <view class="section_title" >时间选择器</view>
+  <picker mode="time" value="" start="09:01" end="21:01" bindchange="bindTimeChange">
+    <view class="picker">
+      当前选择: {{time}}
+    </view>
+  </picker>
+</view>
+ 
+<view class="section">
+  <view class="section__title">日期选择器</view>
+  <picker mode="date" value="" start="2019-05-04" end="2019-12-12" bindchange="bindDateChange">
+    <view class="picker">
+      当前选择: {{date}}
+    </view>
+  </picker>
+</view>
+<view class="section">
+  <view class="section__title">人数选择器</view>
+<input class='create-title' placeholder="最大人数" bindinput="toppeople"></input>
+</view>
+<view class="section">
+  <textarea class="detailText" 
+    placeholder="输入您的备注"
+    bindblur="bindTextAreaBlur"
+    value="{{details}}">
+</textarea>
+</view>
+  <button  class="btn1" bindtap='bindbuttonttap'data-id="{{id}}">确定信息</button>
