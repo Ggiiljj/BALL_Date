@@ -1,0 +1,27 @@
+<!--form表单-->
+<text>输入地址</text>
+<form bindsubmit="formSubmit">
+    <!--地址描述输入框,示例：北京市海淀区彩和坊路海淀西大街74号-->
+    <input class="input-radius" style="border:1px solid #000;" name="geocoder" bindinput="getsuggest" value="{{backfill}}" ></input>
+    <view wx:for="{{suggestion}}" wx:key="index">
+    <!--绑定回填事件-->
+    <view>
+    <!--根据需求渲染相应数据-->
+    <!--渲染地址title-->
+    <view style="text-align:center;" bindtap="backfill" id="{{index}}">{{item.title}}</view>
+    <!--渲染详细地址-->
+    <view style="font-size:12px;color:#666;text-align:center;">{{item.addr}}</view>
+    </view>
+</view>
+    <!--提交表单数据-->
+    <button form-type="submit" class="btn1" bindtap='get_detail'>确定地址</button>
+</form>
+<map id="myMap"
+    markers="{{markers}}"
+    style="width:100%;height:300px;"
+    longitude="{{poi.longitude}}"
+    latitude="{{poi.latitude}}"
+    scale='16' show-location>
+</map>
+<!--地址描述经纬度展示-->
+<!-- style="border:1px solid #000;"  -->

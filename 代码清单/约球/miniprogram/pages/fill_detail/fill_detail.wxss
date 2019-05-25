@@ -1,0 +1,17 @@
+/* pages/fill_detail/fill_detail.wxss */
+.section{
+  padding: 20rpx;
+  border-bottom: 1px solid #aaaaaa;
+}
+.textt{
+  color:#aaaaaa;
+  text-align: center;
+  font-family:MicroSoft yahei;
+}
+.btn1 {
+  width: 80%;
+  background-color: beige;
+  color: grey;
+  border: 0;
+  border-radius: 98rpx; 
+}
