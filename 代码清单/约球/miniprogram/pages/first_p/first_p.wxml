@@ -1,0 +1,34 @@
+
+<van-cell-group>
+   <van-field
+    type="number"
+    label="身高(cm)"
+    placeholder="请输入身高"
+    required
+    border="{{ false }}"
+    bind:blur="onHeight"
+  />
+  <van-field
+    type="number"
+    label="体重(kg)"
+    placeholder="请输入体重"
+    required
+    border="{{ false }}"
+    bind:blur="onWeight"
+  />
+  <van-field
+    type="textarea"
+    label="擅长位置"
+    placeholder="请输入擅长位置"
+    border="{{ false }}"
+     bind:blur="onCp"
+  />
+  <van-field
+    type="textarea"
+    label="外号"
+    placeholder="外号"
+    border="{{ false }}"
+    bind:blur="onKick"
+  />
+</van-cell-group>
+ <button  class="btn1" bindgetuserinfo='ttap' type='primary' open-type="getUserInfo">确定信息</button>

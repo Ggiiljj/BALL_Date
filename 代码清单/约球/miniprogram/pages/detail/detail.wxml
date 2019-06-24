@@ -1,2 +1,10 @@
-<!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<view class='card-image-container'>
+<image class='top_i'
+src='http://img.mp.itc.cn/upload/20170525/06150fbaba814feb966f80d9c8a4bb08_th.jpg' mode='widthFix'></image>
+</view>
+<van-cell-group>
+  <van-cell title="小组成员信息查看"  bind:click="on_click" />
+  <van-cell title="详细地址"  label="{{locateinfo.description}}" />
+  <van-cell title="时间" value="{{locateinfo.date}}  {{locateinfo.time}}" />
+   <van-cell title="备注"  label="{{locateinfo.details}}" />
+</van-cell-group>

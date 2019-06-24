@@ -7,6 +7,9 @@
 }
 .input-radius{
   border-radius: 15px;
+  /* display: block;
+  text-overflow: clip;
+  over */
   margin: 0 0 3px 18px;
   border:0;
   background: rgb(245, 240, 240);

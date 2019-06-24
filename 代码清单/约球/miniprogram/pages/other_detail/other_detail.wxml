@@ -1,0 +1,13 @@
+<!--pages/other_detail/other_detail.wxml-->
+<van-cell-group>
+  <van-cell title="{{hostd.nickName}}"  label="身高{{hostd.height}}cm    体重{{hostd.weight}}kg   位置{{hostd.cp}}  外号{{hostd.kickname}}" icon='{{hostd.avatarUrl}}'/>
+</van-cell-group>
+<view wx:if="{{num>1}}">
+
+<view wx:for="{{otherd}}">
+<van-cell-group>
+ <van-cell title="{{item.nickName}}"  label="身高{{item.height}}cm    体重{{item.weight}}kg   位置{{item.cp}}  外号{{item.kickname}}" icon='{{item.avatarUrl}}'/>
+</van-cell-group>
+</view>
+</view>
+

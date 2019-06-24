@@ -1,8 +1,18 @@
 <!--form表单-->
-<text>输入地址</text>
 <form bindsubmit="formSubmit">
     <!--地址描述输入框,示例：北京市海淀区彩和坊路海淀西大街74号-->
-    <input class="input-radius" style="border:1px solid #000;" name="geocoder" bindinput="getsuggest" value="{{backfill}}" ></input>
+    <!-- <input class="input-radius" style="border:1px solid #000;" name="geocoder" bindinput="getsuggest" value="{{backfill}}"></input> -->
+  <van-cell-group>
+  <van-field
+    label="地址"
+    required
+    clearable
+     placeholder="请输入地址"
+     name="geocoder" 
+     bind:input="getsuggest"
+     value="{{backfill}}"
+  />
+</van-cell-group>
     <view wx:for="{{suggestion}}" wx:key="index">
     <!--绑定回填事件-->
     <view>
@@ -13,9 +23,15 @@
     <view style="font-size:12px;color:#666;text-align:center;">{{item.addr}}</view>
     </view>
 </view>
-    <!--提交表单数据-->
-    <button form-type="submit" class="btn1" bindtap='get_detail'>确定地址</button>
-</form>
+ <view wx:if="{{symm==1}}">
+     <button  class="btn1" bindtap='tapp'>确定地址</button>
+    </view>
+     <view wx:if="{{symm==2}}">
+     <button  class="btn1" bindtap='tapp'>确定地址</button>
+    </view>
+     <view wx:if="{{symm==0}}">
+     <button form-type="submit" class="btn1" bindtap='get_detail'>确定地址</button>
+    </view>
 <map id="myMap"
     markers="{{markers}}"
     style="width:100%;height:300px;"
@@ -23,5 +39,9 @@
     latitude="{{poi.latitude}}"
     scale='16' show-location>
 </map>
+    <!--提交表单数据-->
+   
+</form>
+
 <!--地址描述经纬度展示-->
 <!-- style="border:1px solid #000;"  -->

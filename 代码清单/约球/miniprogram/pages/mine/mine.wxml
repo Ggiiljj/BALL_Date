@@ -6,8 +6,7 @@
 </view>
 </view>
 <van-cell-group>
-<van-cell title="修改" is-link url="/pages/change/change" link-type="navigateTo" size="large"/>
-<van-cell title="我的基本信息" link-type="navigateTo"size="large" />
-<van-cell title="他人评价" link-type="navigateTo"size="large" />
-<van-cell title="标签" link-type="navigateTo"size="large" />
-</van-cell-group>
+
+  <van-cell title="个人信息"  label="身高{{height}}cm    体重{{weight}}kg   位置{{cp}}  外号{{kickname}}" />
+  <van-cell title="修改个人信息" is-link url="/pages/change/change" link-type="navigateTo" size="large"/>
+  </van-cell-group>

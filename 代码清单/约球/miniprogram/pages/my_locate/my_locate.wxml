@@ -1,7 +1,0 @@
-<!--pages/mine/mine.wxml-->
-<view class="bg">
-<view class="header">
-<open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
-<open-data type="userNickName" lang="zh_CN" class="namer" ></open-data>
-</view>
-</view>

@@ -1,1 +1,16 @@
-/* pages/detail/detail.wxss */
+.top_i{
+  width:700rpx;
+  height: 180rpx;
+  border-radius: 15rpx;
+  overflow: hidden
+  
+}
+.card-image-container{
+  background-color: lavenderblush;
+ display: flex;
+ justify-content: center; /** flex 属性， 水平居中**/
+}
+.section{
+  padding: 20rpx;
+  border-bottom: 1px solid #aaaaaa;
+}

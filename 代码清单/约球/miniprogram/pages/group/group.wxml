@@ -1,1 +1,19 @@
-<text>asdasd</text>
+
+
+  <view wx:if="{{sym!=0}}">
+<van-card
+  tag="约球"
+  desc="时间:{{locateinfo.date}}地点:{{locateinfo.description}}"
+  title="约球信息"
+  thumb="http://img.mp.itc.cn/upload/20170525/06150fbaba814feb966f80d9c8a4bb08_th.jpg"
+>
+<view slot="footer" wx:if="{{sym==2}}">
+    <van-button size="mini" bindtap="tapp">进入公告</van-button>
+    <van-button size="mini" bindtap="tappdelete">取消公告</van-button>
+  </view>
+  <view slot="footer" wx:if="{{sym==1}}">
+    <van-button size="mini" bindtap="tapp">进入公告</van-button>
+    <van-button size="mini" bindtap="tapp1delete">解散公告</van-button>
+  </view>
+</van-card>
+</view>

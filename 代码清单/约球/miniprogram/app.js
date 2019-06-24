@@ -1,5 +1,8 @@
 //app.js
 App({
+  globalData:{
+     openId:''
+  },
   onLaunch: function () {
     
     if (!wx.cloud) {
@@ -11,5 +14,20 @@ App({
     }
 
     this.globalData = {}
+  },
+  getOpenId: function () {
+    return new Promise(function (resolve, reject) {
+      wx.cloud.callFunction({
+        name: 'getOpenId',
+        complete: res => {
+          console.log(res.result.openid)
+          // this.globalData.openid = res.result.openid
+          // console.log("this.globalData.openid" + this.globalData.openid)
+          //wx.setStorageSync("openId", res.result.openid)
+          wx.setStorageSync("openId", res.result.openid)
+          resolve(res.result.openid)
+        }
+      })
+    })
   }
 })

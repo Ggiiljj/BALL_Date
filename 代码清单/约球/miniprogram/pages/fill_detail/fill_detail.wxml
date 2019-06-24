@@ -18,7 +18,7 @@
 </view>
 <view class="section">
   <view class="section__title">人数选择器</view>
-<input class='create-title' placeholder="最大人数" bindinput="toppeople"></input>
+<input class='create-title' type="number" placeholder="最大人数" bindinput="toppeople"></input>
 </view>
 <view class="section">
   <textarea class="detailText" 

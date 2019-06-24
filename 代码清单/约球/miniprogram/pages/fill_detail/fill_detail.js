@@ -23,7 +23,17 @@ Page({
   onLoad: function (options) {
     // console.log(options.mm)
    
-   var _this=this
+    var _this=this
+    const db2 = wx.cloud.database();
+    const userinfo = db2.collection('userinfo')
+    userinfo.doc(options.mm_id).update({
+      data: {
+       locateid: options._idd//创建者的sym值为1.
+      },
+      success(res) {
+        console.log(res.data)
+      }
+    })
    _this.setData({
      _id:options._idd
    })
@@ -41,7 +51,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+   
   },
 
   /**
@@ -109,8 +119,42 @@ Page({
     var xx
     const _=db.command
     const _this=this
+    if(_this.data)
     console.log(_this.data._id)
     console.log(_this.data.date)
+    if(_this.data.date=='')
+    {
+      wx.showModal({
+        title: '提示',
+        content: '日期不能为空',
+        success: function (res) {
+          if (res.confirm) {
+          }
+        }
+      })
+    }
+    else if (_this.data.time == '') {
+      wx.showModal({
+        title: '提示',
+        content: '时间不能为空',
+        success: function (res) {
+          if (res.confirm) {
+          }
+        }
+      })
+    }
+    else if(_this.data.people<=1)
+    {
+      wx.showModal({
+        title: '提示',
+        content: '人数要大于1个',
+        success: function (res) {
+          if (res.confirm) {
+          }
+        }
+      })
+    }
+    else{
     db.collection('locate').doc(_this.data._id).update({
       data: {
          date:_this.data.date,
@@ -119,8 +163,8 @@ Page({
          details:_this.data.details
       },
       success(res) {
-        wx.redirectTo({
-          url: '../my_locate/my_locate?_id='+_this.data._id,
+        wx.switchTab({
+          url: '../group/group?_id='+_this.data._id,
           success: function (res) { },
           fail: function (res) { },
           complete: function (res) { },
@@ -128,5 +172,5 @@ Page({
       }
     })
     
-  }
+  }}
 })
